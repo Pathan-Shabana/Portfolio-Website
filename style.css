@@ -1,0 +1,310 @@
+/* ============================================================
+   GLOBAL RESET & BASE STYLE
+=============================================================*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  background: #bbcde0;
+  color: #222;
+  padding-top: 90px;   /* Space for fixed header */
+  padding-bottom: 80px; /* Space for fixed footer */
+}
+
+
+/* ============================================================
+   FIXED HEADER (Improved Readability)
+=============================================================*/
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(227, 194, 122, 0.95); /* warm gold */
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+  z-index: 1000;
+  padding: 15px 30px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav .logo {
+  color: #2a2a2a;      /* dark text for header logo */
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: #333;         /* darker for readability */
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  color: #0055aa;
+  text-shadow: 0 0 6px rgba(0, 85, 170, 0.6);
+}
+
+
+/* ============================================================
+   HERO SECTION (IMAGE LEFT, TEXT RIGHT)
+=============================================================*/
+.hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  padding: 40px 20px;
+  text-align: left;
+}
+
+.hero img {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  border: 4px solid #0055aa;
+  box-shadow: 0 0 20px rgba(0, 85, 170, 0.25);
+}
+
+.hero-text h1 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #444;
+  margin-top: 5px;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* ============================================================
+   CONTENT SECTIONS
+=============================================================*/
+section {
+  max-width: 1000px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+.profile,
+.goals,
+.projects,
+.contact {
+  background: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.08);
+  margin-bottom: 40px;
+}
+
+.profile p {
+  line-height: 1.7;
+  font-size: 17px;
+}
+
+
+/* ============================================================
+   MVV SECTION (Mission, Vision, Values)
+=============================================================*/
+.mvv {
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+.mvv div {
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  flex: 1;
+  min-width: 260px;
+  text-align: center;
+  box-shadow: 0px 8px 18px rgba(0,0,0,0.08);
+}
+
+
+/* ============================================================
+   PROJECT CARDS
+=============================================================*/
+.project-card {
+  background: linear-gradient(135deg, #ffffff, #f7fbff);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0px 6px 16px rgba(0,0,0,0.08);
+  transition: 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 12px 20px rgba(0,0,0,0.12);
+}
+
+.btn {
+  display: inline-block;
+  background: #0055aa;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background: #003f80;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+
+/* ============================================================
+   PROJECTS GRID (SIDE-BY-SIDE)
+=============================================================*/
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ============================================================
+   CONTACT FORM STYLE
+=============================================================*/
+.contact-form {
+  margin-top: 30px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+  backdrop-filter: blur(6px);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 6px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  background: #fff;
+  font-size: 15px;
+  transition: 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #0055aa;
+  box-shadow: 0 0 10px rgba(0, 85, 170, 0.25);
+}
+
+.send-btn {
+  width: 100%;
+  padding: 14px;
+  background: #0055aa;
+  border: none;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.send-btn:hover {
+  background: #003f80;
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.22);
+}
+
+
+/* ============================================================
+   POPUP MESSAGE STYLE
+=============================================================*/
+.popup {
+  position: fixed;
+  top: 20px;
+  right: -300px;
+  padding: 15px 25px;
+  border-radius: 8px;
+  color: white;
+  font-size: 16px;
+  z-index: 2000;
+  opacity: 0;
+  transition: all 0.4s ease;
+}
+
+.popup.visible {
+  right: 20px;
+  opacity: 1;
+}
+
+.popup.success {
+  background: #28a745;
+}
+
+.popup.error {
+  background: #d50000;
+}
+
+
+/* ============================================================
+   FIXED FOOTER (Improved Legibility)
+=============================================================*/
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: rgba(227, 194, 122, 0.95);
+  color: #222;    /* Dark text now visible */
+  text-align: center;
+  padding: 15px;
+  font-size: 15px;
+  font-weight: 600;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.25);
+}
